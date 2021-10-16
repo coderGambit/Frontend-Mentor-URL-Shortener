@@ -1,0 +1,110 @@
+.menuButton{
+    cursor: pointer;
+    position: absolute;
+    right: 10px;
+}
+
+.item {
+    height: 5px;
+    width: 30px;
+    background: black;
+    border-radius: 3px;
+    position: relative;
+    animation-duration: .25s;
+    animation-fill-mode: forwards;
+}
+
+.item-1 {
+    margin-bottom: 5px;
+    z-index: 1;
+}
+
+.item-2 {
+    margin-bottom: 5px;
+}
+
+.item-3 {
+    z-index: 1;
+}
+
+@keyframes slideDownToCenterAndRotate {
+    0% {
+        top: 0;
+    }
+    50% {
+        top: calc(50% - 2px);
+    }
+    51% {
+        transform: rotate(0);
+    }
+    100% {
+        top: calc(50% - 2px);
+        transform: rotate(45deg);
+    }
+}
+
+@keyframes slideDownToCenterAndRotateReverse {
+    0% {
+        transform: rotate(45deg);
+        top: calc(50% - 2px);
+    }
+    50% {
+        transform: rotate(0);
+    }
+    51% {
+        top: calc(50% - 2px);
+    }
+    100% {
+        top: 0;
+    }
+}
+
+@keyframes scaleDown {
+    from {
+        transform: scale(1);
+    }
+    to {
+        transform: scale(0);
+    }
+}
+
+@keyframes scaleUp {
+    from {
+        transform: scale(0);
+    }
+    to {
+        transform: scale(1);
+    }
+}
+
+@keyframes slideUpToCenterAndRotate {
+    0% {
+        bottom: 0;
+    }
+    50% {
+        bottom: calc(50% - 2px);
+    }
+    51% {
+        transform: rotate(0);
+    }
+    100% {
+        bottom: calc(50% - 2px);
+        transform: rotate(135deg);
+    }
+}
+
+@keyframes slideUpToCenterAndRotateReverse {
+    0% {
+        transform: rotate(135deg);
+        bottom: calc(50% - 2px);
+    }
+    50% {
+        transform: rotate(0);
+    }
+    51% {
+        bottom: calc(50% - 2px);
+    }
+    100% {
+        bottom: 0;
+    }
+}

@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&display=swap');
+
+*, *::before, *::after{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    max-width: 1440px;
+    height: 100vh;
+    --clr-primary-cyan: hsl(180, 66%, 49%);
+    --clr-primary-dark-violet: hsl(257, 27%, 26%);
+    --clr-secondary-red: hsl(0, 87%, 67%);
+    --clr-neutral-gray: hsl(0, 0%, 75%);
+    --clr-neutral-grayish-violet: hsl(257, 7%, 63%);
+    --clr-neutral-dark-blue: hsl(255, 11%, 22%);
+    --clr-neutral-dark-violet: hsl(260, 8%, 14%);
+    --font-size: 18px;
+    font-family: Poppins, sans-serif;
+}
+
+.menu{
+    display: flex;
+    align-items: center;
+    gap: 50px;
+}
+
+.links{
+    gap: 30px;
+    display: flex;
+}
+
+.menuLink {
+    font-weight: bold;
+    color: var(--clr-neutral-grayish-violet);
+}
+
+.authLinks{
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.signUpButton{
+    background-color: var(--clr-primary-cyan);
+    border: none;
+    padding: 10px 22px;
+    border-radius: 100px;
+    color: white;
+    font-weight: bold;
+}
+
+.menuButton{
+    display: none;
+}
+
+.attribution {
+    position: fixed;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 11px;
+    text-align: center;
+}
+
+.attribution a {
+    color: hsl(228, 45%, 44%);
+}
