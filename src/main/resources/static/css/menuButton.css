@@ -1,13 +1,13 @@
 .menuButton{
     cursor: pointer;
     position: absolute;
-    right: 10px;
+    right: 0;
 }
 
 .item {
     height: 5px;
     width: 30px;
-    background: black;
+    background: var(--clr-neutral-gray);
     border-radius: 3px;
     position: relative;
     animation-duration: .25s;
