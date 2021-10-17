@@ -1,6 +1,7 @@
 let opened = false;
 let el = document.getElementById("menuButton");
-let menu = document.getElementById('menuLinks');
+let menuLinks = document.getElementById('menuLinks');
+const menuHeight = menuLinks.offsetHeight;
 
 el.addEventListener("click", () => {
     let children = el.children;
@@ -9,13 +10,15 @@ el.addEventListener("click", () => {
         children[0].style.animationName = "slideDownToCenterAndRotate";
         children[1].style.animationName = "scaleDown";
         children[2].style.animationName = "slideUpToCenterAndRotate";
-        menu.style.transform = "scale(1)";
+        menuLinks.style.height = `${menuHeight}` + 'px';
+        menuLinks.style.padding = "40px 20px";
     }
     else {
         children[0].style.animationName = "slideDownToCenterAndRotateReverse";
         children[1].style.animationName = "scaleUp";
         children[2].style.animationName = "slideUpToCenterAndRotateReverse";
-        menu.style.transform = "scale(0)";
+        menuLinks.style.height = "0";
+        menuLinks.style.padding = "0 20px";
     }
     opened = !opened;
 });
