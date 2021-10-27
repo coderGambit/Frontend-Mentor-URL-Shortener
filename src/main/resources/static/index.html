@@ -7,108 +7,227 @@
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
   <link rel="stylesheet" href="css/styles.css" type="text/css">
   <link rel="stylesheet" href="css/menuButton.css" type="text/css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&display=swap" rel="stylesheet">
   
   <title>Frontend Mentor | Shortly URL shortening API Challenge</title>
 
 </head>
 <body>
 
-  <header class="menu">
+  <div class="container">
 
-    <img class="logo" src="images/logo.svg" alt="shortly logo">
-    <section class="menuLinks" id="menuLinks">
+    <header class="menu">
 
-      <section class="links">
+      <img class="logo" src="images/logo.svg" alt="shortly logo">
+      <section class="menuLinks" id="menuLinks">
 
-        <a class="menuLink">Features</a>
-        <a class="menuLink">Pricing</a>
-        <a class="menuLink">Resources</a>
+        <section class="links">
+
+          <a class="menuLink">Features</a>
+          <a class="menuLink">Pricing</a>
+          <a class="menuLink">Resources</a>
+
+        </section>
+
+        <div class="divider"></div>
+
+        <section class="authLinks">
+
+          <a class="menuLink loginLink">Login</a>
+          <button class="signUpButton">Sign Up</button>
+
+        </section>
 
       </section>
 
-      <div class="divider"></div>
+      <div class="menuButton" id="menuButton">
+        <div class='item item-1'></div>
+        <div class='item item-2'></div>
+        <div class='item item-3'></div>
+      </div>
 
-      <section class="authLinks">
+    </header>
 
-        <a class="menuLink loginLink">Login</a>
-        <button class="signUpButton">Sign Up</button>
+    <main>
+
+      <section class="heroSection">
+
+        <section class="heroHeadingSection">
+
+          <h1 class="heroHeading">More than just shorter links</h1>
+          <p class="heroDescription">
+            Build your brand’s recognition and get detailed insights
+            on how your links are performing.
+          </p>
+          <button class="getStartedButton">Get Started</button>
+
+        </section>
+
+        <img class="heroImage" src="images/illustration-working.svg" alt="illustration of person working">
 
       </section>
 
-    </section>
+      <section id="formSection" class="formSection">
 
-    <div class="menuButton" id="menuButton">
-      <div class='item item-1'></div>
-      <div class='item item-2'></div>
-      <div class='item item-3'></div>
-    </div>
+        <form class="urlShortenerForm">
 
-  </header>
+          <input type="url" class="urlShortenerInput" placeholder="Shorten a link here..." required>
+          <button type="submit" class="roundCornerButton">Shorten It!</button>
 
-  <main></main>
+        </form>
 
-  More than just shorter links
+        <section class="shortenedLinks">
 
-  Build your brand’s recognition and get detailed insights 
-  on how your links are performing.
+          <article class="shortLinksContainer">
 
-  Get Started
-  
-  Shorten a link here...
+            <a class="originalLink" href="javascript:void(0)">https://www.frontendmentor.io</a>
+            <div class="divider"></div>
+            <a class="newLink" href="javascript:void(0)">https://rel.ink/k4lKyk</a>
+            <button class="roundCornerButtonSmall">Copy</button>
 
-  Shorten It!
+          </article>
 
-  Advanced Statistics
+          <article class="shortLinksContainer">
 
-  Track how your links are performing across the web with our 
-  advanced statistics dashboard.
+            <a class="originalLink" href="javascript:void(0)">https://www.frontendmentor.io/file/happy-holidays</a>
+            <div class="divider"></div>
+            <a class="newLink" href="javascript:void(0)">https://me.ink/k4lKyk</a>
+            <button class="roundCornerButtonSmall">Copy</button>
 
-  Brand Recognition
+          </article>
 
-  Boost your brand recognition with each click. Generic links don’t 
-  mean a thing. Branded links help instil confidence in your content.
+          <article class="shortLinksContainer">
 
-  Detailed Records
+            <a class="originalLink" href="javascript:void(0)">https://www.frontendmentor.io</a>
+            <div class="divider"></div>
+            <a class="newLink" href="javascript:void(0)">https://she.ink/k4lKyk</a>
+            <button class="roundCornerButtonSmall">Copy</button>
 
-  Gain insights into who is clicking your links. Knowing when and where 
-  people engage with your content helps inform better decisions.
+          </article>
 
-  Fully Customizable
+        </section>
 
-  Improve brand awareness and content discoverability through customizable 
-  links, supercharging audience engagement.
+      </section>
 
-  Boost your links today
+      <section class="statisticSection">
 
-  Get Started
+        <section class="statisticHeadingSection">
 
-  Features
+          <h2 class="statisticHeading">Advanced Statistics</h2>
+          <p class="statisticDescription">Track how your links are performing across the web with our
+            advanced statistics dashboard.</p>
 
-  Link Shortening
-  Branded Links
-  Analytics
+        </section>
 
-  Resources
+        <article class="statisticCard statisticCard1">
 
-  Blog
-  Developers
-  Support
+          <img src="images/icon-brand-recognition.svg" alt="brand recognition image">
+          <h3 class="statCardHeading">Brand Recognition</h3>
+          <small class="statCardDescription">
+            Boost your brand recognition with each click. Generic links don’t
+            mean a thing. Branded links help instil confidence in your content.
+          </small>
 
-  Company
+        </article>
 
-  About
-  Our Team
-  Careers
-  Contact
+        <article class="statisticCard statisticCard2">
 
-  <footer>
+          <img src="images/icon-detailed-records.svg" alt="detailed records image">
+          <h3 class="statCardHeading">Detailed Records</h3>
+          <small class="statCardDescription">
+            Gain insights into who is clicking your links. Knowing when and where
+            people engage with your content helps inform better decisions.
+          </small>
+
+        </article>
+
+        <article class="statisticCard statisticCard3">
+
+          <img src="images/icon-fully-customizable.svg" alt="fully customizable image">
+          <h3 class="statCardHeading">Fully Customizable</h3>
+          <small class="statCardDescription">
+            Improve brand awareness and content discoverability through customizable
+            links, supercharging audience engagement.
+          </small>
+
+        </article>
+
+      </section>
+
+      <section class="callToActionSection">
+
+        <h1 class="callToActionHeading">Boost your links today</h1>
+        <button class="getStartedButton">Get Started</button>
+
+      </section>
+
+    </main>
+
+    <footer>
+
+      <section class="footerContent">
+        
+        <img src="images/logo.svg" alt="logo" class="whiteLogo">
+
+        <section class="footerLinks">
+
+          <article class="footerColumn">
+
+            <h5>Features</h5>
+
+            <a class="footerLink" href="javasrcipt:void(0)">Link Shortening</a>
+            <a class="footerLink" href="javasrcipt:void(0)">Branded Links</a>
+            <a class="footerLink" href="javasrcipt:void(0)">Analytics</a>
+
+          </article>
+
+          <article class="footerColumn">
+
+            <h5>Resources</h5>
+
+            <a class="footerLink" href="javasrcipt:void(0)">Blog</a>
+            <a class="footerLink" href="javasrcipt:void(0)">Developers</a>
+            <a class="footerLink" href="javasrcipt:void(0)">Support</a>
+
+          </article>
+
+          <article class="footerColumn">
+
+            <h5>Company</h5>
+
+            <a class="footerLink" href="javasrcipt:void(0)">About</a>
+            <a class="footerLink" href="javasrcipt:void(0)">Our Team</a>
+            <a class="footerLink" href="javasrcipt:void(0)">Careers</a>
+            <a class="footerLink" href="javasrcipt:void(0)">Contact</a>
+
+          </article>
+
+        </section>
+
+        <section class="socialLinks">
+
+          <img src="images/icon-facebook.svg" alt="facebook logo">
+          <img src="images/icon-twitter.svg" alt="twitter logo">
+          <img src="images/icon-pinterest.svg" alt="pinterest logo">
+          <img src="images/icon-instagram.svg" alt="instagram logo">
+
+        </section>
+        
+      </section>
+
       <div class="attribution">
         <p>
           Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
           Coded by <a href="https://www.rondellborel.com">Rondell Borel</a>.
         </p>
       </div>
-  </footer>
+
+
+    </footer>
+
+  </div>
 
   <script src="js/script.js" type="text/javascript"></script>
   <script src="js/menuButton.js" type="text/javascript"></script>

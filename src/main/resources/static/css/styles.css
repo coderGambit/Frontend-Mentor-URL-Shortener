@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&display=swap');
-
 *, *::before, *::after{
     box-sizing: border-box;
     padding: 0;
@@ -14,6 +12,7 @@ body{
     --clr-primary-dark-violet: hsl(257, 27%, 26%);
     --clr-secondary-red: hsl(0, 87%, 67%);
     --clr-neutral-gray: hsl(0, 0%, 75%);
+    --clr-neutral-lightgray: #F0F1F6;
     --clr-neutral-grayish-violet: hsl(257, 7%, 63%);
     --clr-divider: hsla(257, 7%, 63%, 0.3);
     --clr-neutral-dark-blue: hsl(255, 11%, 22%);
@@ -21,7 +20,8 @@ body{
     font-size: 18px;
     font-family: Poppins, sans-serif;
     margin: 0 auto;
-    padding: 70px;
+    color: var(--clr-neutral-dark-blue);
+    line-height: 1.5;
 }
 
 .menu{
@@ -29,13 +29,13 @@ body{
     align-items: center;
     gap: 50px;
     position: relative;
+    padding: 20px 70px 0;
 }
 
 .menuLinks{
     display: flex;
     flex-grow: 1;
     align-items: center;
-    transition: all .25s ease-in-out;
     overflow: hidden;
 }
 
@@ -69,18 +69,15 @@ body{
     gap: 40px;
 }
 
-.signUpButton{
+button{
     border: none;
-    padding: 10px 22px;
-    border-radius: 100px;
     color: white;
     font-weight: bold;
+    background-color: var(--clr-primary-cyan);
+    padding: 13px 26px;
+    border-radius: 100px;
     cursor: pointer;
     flex-shrink: 0;
-}
-
-button{
-    background-color: var(--clr-primary-cyan);
 }
 
 button:hover{
@@ -89,19 +86,348 @@ button:hover{
 
 .menuButton{
     display: none;
+    right: 70px;
+}
+
+main > *{
+    padding: 0 70px;
+}
+
+.heroSection{
+    display: flex;
+    align-items: center;
+    position: relative;
+    margin-top: 80px;
+    overflow: hidden;
+    padding-bottom: 100px;
+}
+
+.heroHeadingSection{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.heroHeading{
+    font-size: 5rem;
+    line-height: 1.2;
+    font-weight: 800;
+}
+
+.heroDescription{
+    max-width: 70%;
+    margin-top: -10px;
+    margin-bottom: 25px;
+    font-size: 22px;
+    font-weight: 500;
+    color: var(--clr-neutral-grayish-violet);
+}
+
+.getStartedButton{
+    font-size: 22px;
+    padding: 15px 30px;
+}
+
+.heroImage{
+    margin-right: -120px;
+}
+
+.formSection{
+    background-color: var(--clr-neutral-lightgray);
+    width: 100%;
+    padding-bottom: 100px;
+}
+
+.urlShortenerForm{
+    transform: translateY(-50%);
+    background-image: url("../images/bg-shorten-desktop.svg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: var(--clr-primary-dark-violet);
+    width: 100%;
+    height: 168px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+    z-index: 100;
+    border-radius: 10px;
+}
+
+.roundCornerButton{
+    border-radius: 10px;
+    padding: 20px 40px;
+    font-size: 20px;
+}
+
+.urlShortenerInput{
+    width: 68%;
+    border-radius: 10px;
+    padding: 22px 40px;
+}
+
+.urlShortenerInput::placeholder{
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+.shortenedLinks{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-top: -50px;
+}
+
+.shortLinksContainer{
+    display: flex;
+    align-items: center;
+    background-color: white;
+    padding: 10px 20px 10px 30px;
+    min-height: 75px;
+    border-radius: 5px;
+    gap: 20px;
+}
+
+.originalLink{
+    flex-grow: 1;
+    text-decoration: none;
+    color: var(--clr-primary-dark-violet);
+    width: 100%;
+    display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.newLink{
+    text-decoration: none;
+    color: var(--clr-primary-cyan);
+    width: 100%;
+    display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.roundCornerButtonSmall{
+    border-radius: 5px;
+    padding: 10px 30px;
+    font-size: 1rem;
+}
+
+.roundCornerButtonSmallVisited{
+    background-color: var(--clr-primary-dark-violet);
+}
+
+.roundCornerButtonSmallVisited:hover{
+    background-color: var(--clr-primary-dark-violet);
+}
+
+.statisticSection{
+    background-color: var(--clr-neutral-lightgray);
+    color: var(--clr-neutral-grayish-violet);
+    display: grid;
+    grid-template-areas:
+                    "head"
+                    "card1"
+                    "card2"
+                    "card3";
+    justify-items: center;
+    gap: 100px;
+    padding-bottom: 75px;
+}
+
+.statisticSection h3{
+    color: var(--clr-neutral-dark-blue);
+}
+
+.statisticHeadingSection{
+    grid-area: head;
+    text-align: center;
+}
+
+.statisticHeading{
+    color: var(--clr-neutral-dark-blue);
+    font-size: 1.9rem;
+    margin-bottom: 20px;
+}
+
+.statisticCard{
+    background-color: white;
+    padding: 30px;
+    border-radius: 6px;
+    max-width: 350px;
+    max-height: 275px;
+}
+
+.statisticCard1{
+    grid-area: card1;
+}
+
+.statisticCard2{
+    grid-area: card2;
+}
+
+.statisticCard3{
+    grid-area: card3;
+}
+
+.statisticCard > img{
+    padding: 20px;
+    background-color: var(--clr-primary-dark-violet);
+    border-radius: 25px;
+    margin-top: -30px;
+    transform: translateY(-50%);
+}
+
+.callToActionSection{
+    background-image: url("../images/bg-boost-desktop.svg");
+    background-color: var(--clr-primary-dark-violet);
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: grid;
+    justify-items: center;
+    gap: 20px;
+    height: 250px;
+}
+
+.callToActionHeading{
+    color: white;
+    font-size: 2.5rem;
+    align-self: end;
+    text-align: center;
+}
+
+.callToActionSection > .getStartedButton{
+    align-self: start;
+}
+
+.footerContent{
+    display: flex;
+    background-color: var(--clr-neutral-dark-violet);
+    align-items: start;
+    padding: 100px 11% 50px;
+    gap: 10%;
+}
+
+.whiteLogo{
+    filter: invert(100%) sepia(100%) saturate(21%) hue-rotate(257deg) brightness(107%) contrast(106%);
+    margin-right: auto;
+}
+
+.footerLinks{
+    display: flex;
+    gap: 90px;
+}
+
+.footerColumn > h5{
+    color: white;
+    margin-bottom: 10px;
+}
+
+.footerColumn{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.footerLink{
+    color: var(--clr-neutral-grayish-violet);
+    font-size: medium;
+    text-decoration: none;
+}
+
+.footerLink:hover{
+    filter: invert(78%) sepia(97%) saturate(1121%) hue-rotate(132deg) brightness(84%) contrast(91%);
+}
+
+.socialLinks{
+    display: flex;
+    gap: 20px;
+    cursor: pointer;
+}
+
+.socialLinks > img:hover{
+    filter: invert(78%) sepia(97%) saturate(1121%) hue-rotate(132deg) brightness(84%) contrast(91%);
 }
 
 .attribution {
-    position: fixed;
-    bottom: 10px;
-    left: 50%;
-    transform: translateX(-50%);
     font-size: 11px;
     text-align: center;
 }
 
 .attribution a {
     color: hsl(228, 45%, 44%);
+}
+
+@media only screen and (min-width: 1140px) {
+
+    .statisticSection{
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: 1fr repeat(3, 40px) max-content 40px 40px;
+        grid-template-areas:
+                    "head head head"
+                    "card1 . ."
+                    "card1 card2 ."
+                    "card1 card2 card3"
+                    "card1 card2 card3"
+                    ". card2 card3"
+                    ". . card3";
+        gap: 0;
+        padding-bottom: 100px;
+    }
+
+    .statisticHeadingSection{
+        margin-bottom: 100px;
+        max-width: 50%;
+    }
+
+    .statisticHeading{
+        font-size: 2.4rem;
+    }
+}
+
+@media only screen and (max-width: 1250px){
+
+    .menu{
+        padding-left: 25px;
+        padding-right: 25px;
+    }
+
+    .menuButton{
+        right: 25px;
+    }
+
+    main > *{
+        padding: 0 25px;
+    }
+
+    .heroSection{
+        flex-direction: column;
+        gap: 50px;
+        margin-bottom: 100px;
+    }
+
+    .heroImage{
+        order: -1;
+    }
+
+    .urlShortenerForm{
+        flex-direction: column;
+        padding: 25px;
+        height: auto;
+    }
+
+    .footerContent{
+        flex-direction: column;
+        align-items: center;
+        gap: 50px;
+    }
+
+    .whiteLogo{
+        margin-right: 0;
+    }
 }
 
 @media only screen and (max-width: 800px){
@@ -119,8 +445,15 @@ button:hover{
         background-color: var(--clr-primary-dark-violet);
         align-self: stretch;
         border-radius: 10px;
-        padding: 40px 20px;
+        padding: 0 20px;
+        height: 0;
         gap: 30px;
+        transition: all .25s ease-in-out;
+    }
+
+    .menuLinksOpened{
+        padding: 40px 20px;
+        height: 379px;
     }
 
     .menuLink{
@@ -149,11 +482,91 @@ button:hover{
     .menuButton{
         display: initial;
     }
-}
 
-@media only screen and (max-width: 375px) {
+    .heroSection{
+        margin-top: 0;
+    }
 
-    body{
-        padding: 50px 25px;
+    .heroHeadingSection{
+        align-items: center;
+        order: 2;
+        gap: 30px;
+    }
+
+    .heroHeading{
+        font-size: 2.4rem;
+        text-align: center;
+    }
+
+    .heroDescription{
+        font-size: 18px;
+        text-align: center;
+        margin-bottom: 0;
+        max-width: 100%;
+    }
+
+    .heroImage{
+        width: 150%;
+    }
+
+    .formSection{
+        width: 100%;
+    }
+
+    .urlShortenerForm{
+        background-image: url("../images/bg-shorten-mobile.svg");
+    }
+
+    .urlShortenerInput{
+        padding: 15px;
+        width: 100%;
+        border-radius: 5px;
+    }
+
+    .urlShortenerInput::placeholder{
+        font-size: 16px;
+    }
+
+    .roundCornerButton{
+        padding: 15px;
+        width: 100%;
+        border-radius: 5px;
+    }
+
+    .shortLinksContainer{
+        flex-direction: column;
+        align-items: start;
+        gap: 10px;
+        font-size: medium;
+    }
+
+    .originalLink{
+
+    }
+
+    .roundCornerButtonSmall{
+        align-self: stretch;
+    }
+
+    .callToActionSection{
+        height: 300px;
+        background-image: url("../images/bg-boost-mobile.svg");
+    }
+
+    .callToActionHeading{
+        font-size: 1.7rem;
+    }
+
+    .footerContent{
+        padding: 50px 11%;
+    }
+
+    .footerLinks{
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    .footerColumn{
+        align-items: center;
     }
 }
