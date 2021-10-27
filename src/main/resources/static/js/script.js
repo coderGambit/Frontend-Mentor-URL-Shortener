@@ -1,3 +1,5 @@
+
+
 function copyText(text){
 
     let elToCopy = document.createElement("textarea");
@@ -10,18 +12,22 @@ function copyText(text){
 
 function generateShortLink(url){
 
+    let shortLink = "";
+    return shortLink;
 }
 
-function displayShortLink(linkDetails){
+function createResultElement(linkDetails){
 
     let container = document.createElement("article");
     let originalLink = document.createElement("a");
+    let divider = document.createElement("div");
     let shortLink = document.createElement('a');
     let copyButton = document.createElement("button");
 
     container.setAttribute("class", "shortLinksContainer");
     originalLink.setAttribute("href", "javascript:void(0)");
     originalLink.setAttribute("class", "originalLink");
+    divider.setAttribute("class", "divider");
     shortLink.setAttribute("href", "javascript:void(0)");
     shortLink.setAttribute("class", "newLink");
     copyButton.setAttribute("class", "roundCornerButtonSmall");
@@ -38,4 +44,7 @@ function displayShortLink(linkDetails){
             copyText(copyButton.previousElementSibling.innerText);
         }
     });
+
+    container.append(originalLink, divider, shortLink, copyButton);
+    return container;
 }

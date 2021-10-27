@@ -8,7 +8,7 @@ body{
     max-width: 1440px;
     height: 100vh;
     --clr-primary-cyan: hsl(180, 66%, 49%);
-    --clr-primary-cyan-hover: hsla(180, 66%, 49%, .50);
+    --clr-primary-cyan-hover: #9be3e2;
     --clr-primary-dark-violet: hsl(257, 27%, 26%);
     --clr-secondary-red: hsl(0, 87%, 67%);
     --clr-neutral-gray: hsl(0, 0%, 75%);
