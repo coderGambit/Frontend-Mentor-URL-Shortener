@@ -193,7 +193,6 @@ main > *{
     flex-grow: 1;
     text-decoration: none;
     color: var(--clr-primary-dark-violet);
-    width: 100%;
     display: inline-block;
     overflow: hidden;
     white-space: nowrap;
@@ -203,7 +202,6 @@ main > *{
 .newLink{
     text-decoration: none;
     color: var(--clr-primary-cyan);
-    width: 100%;
     display: inline-block;
     overflow: hidden;
     white-space: nowrap;
@@ -541,7 +539,11 @@ main > *{
     }
 
     .originalLink{
+        width: 100%;
+    }
 
+    .newLink{
+        width: 100%;
     }
 
     .roundCornerButtonSmall{

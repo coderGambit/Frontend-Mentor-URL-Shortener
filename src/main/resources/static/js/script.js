@@ -1,19 +1,45 @@
+let urlShortenerForm = document.querySelector('.urlShortenerForm');
+let shortenedLinksContainer = document.querySelector(".shortenedLinks");
 
+window.onload = ()=>{
+    urlShortenerForm.reset();
+}
+
+document.addEventListener('DOMContentLoaded', ()=>{
+    urlShortenerForm.addEventListener('submit', generateShortLink, false);
+}, false);
 
 function copyText(text){
 
     let elToCopy = document.createElement("textarea");
     elToCopy.value = text;
+    elToCopy.textContent = text;
     document.body.appendChild(elToCopy);
     elToCopy.select();
     document.execCommand("copy");
     elToCopy.remove();
 }
 
-function generateShortLink(url){
+function generateShortLink(e){
+    e.preventDefault();
+    let formData = new FormData(urlShortenerForm);
+    getShortLink(formData.get("urlShortenerInput"));
+}
 
-    let shortLink = "";
-    return shortLink;
+async function getShortLink(link) {
+
+    let url = "/shortenLink";
+    let options = {
+        method: 'POST'
+    };
+
+    if(link != null){
+        options['body'] = link;
+    }
+
+    const resp = await fetch(url, options);
+    const jsonDetails = await resp.json();
+    createResultElement(jsonDetails);
 }
 
 function createResultElement(linkDetails){
@@ -32,8 +58,8 @@ function createResultElement(linkDetails){
     shortLink.setAttribute("class", "newLink");
     copyButton.setAttribute("class", "roundCornerButtonSmall");
 
-    originalLink.innerText = linkDetails.originalLink;
-    shortLink.innerText = linkDetails.shortLink;
+    originalLink.innerText = linkDetails.result.original_link;
+    shortLink.innerText = linkDetails.result.full_short_link;
     copyButton.innerText = "Copy";
 
     copyButton.addEventListener('click', ()=>{
@@ -44,7 +70,6 @@ function createResultElement(linkDetails){
             copyText(copyButton.previousElementSibling.innerText);
         }
     });
-
     container.append(originalLink, divider, shortLink, copyButton);
-    return container;
+    shortenedLinksContainer.append(container);
 }
