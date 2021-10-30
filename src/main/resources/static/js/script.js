@@ -1,5 +1,6 @@
 let urlShortenerForm = document.querySelector('.urlShortenerForm');
 let shortenedLinksContainer = document.querySelector(".shortenedLinks");
+let loadingElement = document.querySelector(".loading");
 
 window.onload = ()=>{
     urlShortenerForm.reset();
@@ -26,6 +27,14 @@ function generateShortLink(e){
     getShortLink(formData.get("urlShortenerInput"));
 }
 
+function addLoading() {
+    loadingElement.style.display = "flex";
+}
+
+function removeLoading() {
+    loadingElement.style.display = "none";
+}
+
 async function getShortLink(link) {
 
     let url = "/shortenLink";
@@ -38,8 +47,16 @@ async function getShortLink(link) {
     }
 
     const resp = await fetch(url, options);
-    const jsonDetails = await resp.json();
-    createResultElement(jsonDetails);
+    addLoading();
+    if(resp.ok){
+        const jsonDetails = await resp.json();
+        createResultElement(jsonDetails);
+        removeLoading();
+    }
+    else{
+        alert("An error occurred");
+        removeLoading();
+    }
 }
 
 function createResultElement(linkDetails){
